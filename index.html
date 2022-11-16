@@ -3,11 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div id="choice">
+<!-- <div id="choice"></div> -->
+<div class="text-up">
+    <h1>Rock Paper Scissors Game</h1>
+    <h2>Choose your weapon!</h2>
+    <h3>First one to 5 wins!</h3>
 </div>
+
+<div class="options">
+    <button id='rock' class="btn">Rock</button>
+    <button id='paper' class="btn">Paper</button>
+    <button id='scissors' class="btn">Scissors</button>
+</div>
+
+<div class="scores">
+    <div class="score-boxes">
+        <span>Player Score:</span>
+        <div id="player-score" class="score-text">0</div>
+    </div>
+    <div class="score-boxes">
+        <span>Computer Score:</span>
+        <div id="computer-score" class="score-text">0</div>
+    </div>
+</div>
+
+<div class="result-box">
+    <div class="result-text"> </div>
+</div>
+
+
+<button id="play-again-btn">Play Again!!</button>
 
 <script src="app.js"></script>
 

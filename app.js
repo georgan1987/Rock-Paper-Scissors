@@ -1,95 +1,79 @@
-let choice = document.getElementById('choice');
+let reset = document.querySelector('#play-again-btn');
+let playerPoints = document.querySelector('#player-score');
+let computerPoints = document.querySelector('#computer-score');
+let optionBtn = document.querySelectorAll('div.options button');
+let roundResults = document.querySelector('.result-text')
+
+
+//Refresh the game in order to play a new game
+reset.addEventListener('click',() => location.reload());
 
 //Determines Computer's choice and randomizes the selection
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()*3)
     switch (randomNumber) {
         case 0:
-            return "Rock";
+            return "rock";
         case 1:
-            return "Paper";
+            return "paper";
         case 2:
-            return "Scissors";
+            return "scissors";
     }
+}
+
+//Disables buttons after 5 wins
+function disableButtons(){
+    optionBtn.forEach(elem => {
+        elem.disabled = true;
+    })
 }
 
 //Runs the game
 function game() {
-  let roundsPlayed = 0;
+
+//Gets Player Selection
+optionBtn.forEach(button => { button.addEventListener('click', getPlayerChoice)});
+
   let playerScore = 0;
   let computerScore = 0;
 
-//Loops the game for 5 rounds. Tracks score
-for (i=0; i < 5; i++){
-const computerSelection = getComputerChoice().toLowerCase();
-const playerSelection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
-
-console.log("Player chose", playerSelection);
-console.log("Computer chose", computerSelection);
-
 //Plays the Round to determine the winner
 function playRound(playerSelection, computerSelection) {
-        if (playerSelection == computerSelection) {
-        choice.innerText += "Its a tie this round! \r\n"
-        return "Its a tie this round!"
-    }
-    else if (playerSelection == "rock"){
-        if (computerSelection == "paper") {
-            choice.innerText += "Unfortunately you lost this round!! \r\n"
-            computerScore++
-            return "You lost this round!"
-        }
-        else {
-            choice.innerText += "You won this round!!! \r\n"
-            playerScore++
-            return "You won this round!"
-        }
-    }
-    else if (playerSelection == "scissors"){
-        if (computerSelection == "rock") {
-            choice.innerText += "Unfortunately you lost this round!! \r\n"
-            computerScore++
-            return "You lost this round!"
-        }
-        else {
-            choice.innerText += "You won this round!! \r\n"
-            playerScore++
-            return "You won this round!"
-        }
-    }
-    else if (playerSelection == "paper"){
-        if (computerSelection == "scissors") {
-            choice.innerText += "Unfortunately you lost this round!! \r\n"
-            computerScore++
-            return "You lost this round!"
-        }
-        else if (computerSelection == "paper"){
-          choice.innerText += "It's a tie this round! \r\n"
-          return "It's a tie this round!"
-        }
-        else {
-            choice.innerText += "You won this round!! \r\n"
-            playerScore++
-            return "You won this round!"
-        }
-    }
-  }
+    console.log(playerSelection);
+    console.log(computerSelection);
 
-  console.log(playRound(playerSelection, computerSelection));
-  console.log("Player's score " + playerScore + " and computer's score " + computerScore);
+    if ( (playerSelection == 'rock' && computerSelection == 'scissors') ||
+         (playerSelection == 'scissors' && computerSelection == 'paper') ||
+         (playerSelection == 'paper' && computerSelection == 'rock')) {
+            playerScore += 1;
+            playerPoints.textContent = +playerScore
+            roundResults.textContent = 'You won this round';
+        
+            if(playerScore == 5){
+                roundResults.textContent = "\r\n You won the game! \r\n Click the button below to play again!"
+            disableButtons();
+            }
+         }
+    
+    else if (playerSelection == computerSelection){
+            roundResults.textContent = 'It\'s a tie!';
+    }
 
-//Shows each's round result
-  choice.innerText += "\r\n Score so far is, player's score " + playerScore + " and computer's score is " + computerScore + "\r\n \n \n"
+    else {
+        computerScore += 1;
+        computerPoints.textContent = +computerScore
+        roundResults.textContent = 'You lost this round';
+            if(computerScore == 5){
+                roundResults.textContent = "\r\n \r\n You lost the game! Click the button below to play again!"
+        disableButtons();
+        }
+    }
 }
-//Determines the winner of the 5-rounds game
-if (playerScore > computerScore){
-      choice.innerText += "Winner! After a 5-rounds game, you beat the Computer"
-}
-else if (playerScore == computerScore){
-      choice.innerText += "Final result after a 5-rounds games: It's a tie!"
-}
-else {
-      choice.innerText += "Loser! After a 5-rounds game, you lost to the Computer"
+
+function getPlayerChoice(e){
+    let playerSelection = (e.target.id);
+    playerChoice = e.target.textContent;
+    playRound(playerSelection, getComputerChoice() );
  }
 }
 
