@@ -3,40 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link href="https://fonts.cdnfonts.com/css/the-afford?styles=42688,42686,42687" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/roquefort-trial?styles=143766" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<!-- <div id="choice"></div> -->
-<div class="text-up">
-    <h1>Rock Paper Scissors Game</h1>
-    <h2>Choose your weapon!</h2>
-    <h3>First one to 5 wins!</h3>
-</div>
 
-<div class="options">
-    <button id='rock' class="btn">Rock</button>
-    <button id='paper' class="btn">Paper</button>
-    <button id='scissors' class="btn">Scissors</button>
-</div>
-
-<div class="scores">
-    <div class="score-boxes">
-        <span>Player Score:</span>
-        <div id="player-score" class="score-text">0</div>
+    <div class="header"> 
+        <h1 class="title">ROCK PAPER SCISSORS </h1>
     </div>
-    <div class="score-boxes">
-        <span>Computer Score:</span>
-        <div id="computer-score" class="score-text">0</div>
+
+<div class="container">
+    <div class="text-up">
+        <!-- <h1>Rock Paper Scissors Game</h1> -->
+        <h2>Choose your weapon!</h2>
+        <h3>First one to 5 wins!</h3>
     </div>
+
+    <div class="options">
+        <button id='rock' class="btn">Rock</button>
+        <button id='paper' class="btn">Paper</button>
+        <button id='scissors' class="btn">Scissors</button>
+    </div>
+
+    <div class="scores">
+        <div class="score-boxes">
+            <span>Player Score:</span>
+            <div id="player-score" class="score-text">0</div>
+        </div>
+        
+        <div class="score-boxes">
+            <span>Computer Score:</span>
+            <div id="computer-score" class="score-text">0</div>
+        </div>
+    </div>
+
+    <div class="result-box">
+       <div class="result-text"> </div>
+    </div>
+
+
+    <button id="play-again-btn">Play Again!!</button>
+
 </div>
-
-<div class="result-box">
-    <div class="result-text"> </div>
-</div>
-
-
-<button id="play-again-btn">Play Again!!</button>
 
 <script src="app.js"></script>
 

@@ -1,8 +1,34 @@
-body, .text-up {
+.container, .text-up {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roquefort Trial', sans-serif;
+    color: #379683;             
+}
+
+h2{
+    font-size: 33px;
+}
+
+h3{
+font-size: 27px;
+margin-bottom: 30px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: #379683;
+    color: #08356b;
+    font-family: 'THE AFFORD', sans-serif;
+    font-size: 40px;                                 
+}
+
+body{
+    margin: 0;
+    /* background-color: #8ee4af; */
+    background-color: #5cdb95;
 }
 
 span{
@@ -10,7 +36,6 @@ span{
 }
 
 .options{
-    display: flex;
     gap: 20px;
     justify-content: center;
 }
