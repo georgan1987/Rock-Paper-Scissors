@@ -23,19 +23,22 @@
     </div>
 
     <div class="options">
-        <button id='rock' class="btn">Rock</button>
-        <button id='paper' class="btn">Paper</button>
-        <button id='scissors' class="btn">Scissors</button>
+        <!-- <button id='rock' class="btn btn-square">Rock</button> -->
+        <input type="image" id="rock" src="./img/rock.png" alt="Rock icon" class="picture">
+        <input type="image" id="paper" src="./img/paper.png" alt="Paper icon" class="picture">
+        <input type="image" id="scissors" src="./img/scissors.png" alt="Scissors icon" class="picture">
+        <!-- <button id='paper' class="btn">Paper</button>
+        <button id='scissors' class="btn">Scissors</button> -->
     </div>
 
     <div class="scores">
         <div class="score-boxes">
-            <span>Player Score:</span>
+            <span>Player:</span>
             <div id="player-score" class="score-text">0</div>
         </div>
         
         <div class="score-boxes">
-            <span>Computer Score:</span>
+            <span>Computer:</span>
             <div id="computer-score" class="score-text">0</div>
         </div>
     </div>
@@ -48,6 +51,18 @@
     <button id="play-again-btn">Play Again!!</button>
 
 </div>
+
+<footer class="footer">
+    <p>
+        Copyright ©
+        <script>
+            document.write(new Date().getFullYear())
+        </script>
+        georgan1987
+        <a href="https://github.com/georgan1987"><img src="./img/GitHub-Mark-32px.png" alt="GitHub Logo" class="git-pic">    </a>
+    </p>
+
+</footer>
 
 <script src="app.js"></script>
 

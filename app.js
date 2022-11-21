@@ -1,7 +1,7 @@
 let reset = document.querySelector('#play-again-btn');
 let playerPoints = document.querySelector('#player-score');
 let computerPoints = document.querySelector('#computer-score');
-let optionBtn = document.querySelectorAll('div.options button');
+let optionBtn = document.querySelectorAll('div.options input');
 let roundResults = document.querySelector('.result-text')
 
 
