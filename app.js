@@ -24,7 +24,7 @@ function getComputerChoice() {
 //Disables buttons after 5 wins
 function disableButtons(){
     optionBtn.forEach(elem => {
-        elem.disabled = true;
+        elem.disabled = true;   
     })
 }
 
@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
             roundResults.textContent = 'You won this round';
         
             if(playerScore == 5){
-                roundResults.textContent = "\r\n You won the game! \r\n Click the button below to play again!"
+                roundResults.textContent = "\r\n  You won the game! \r\n Click the button below to play again!"
             disableButtons();
             }
          }

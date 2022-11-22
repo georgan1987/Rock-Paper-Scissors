@@ -9,11 +9,13 @@
 
 h2{
     font-size: 33px;
+    color: #297767;
 }
 
 h3{
 font-size: 27px;
 margin-bottom: 30px;
+color: #297767;
 }
 
 .header{
@@ -22,7 +24,8 @@ margin-bottom: 30px;
     background-color: #379683;
     color: #08356b;
     font-family: 'THE AFFORD', sans-serif;
-    font-size: 40px;                                 
+    font-size: 100px;      
+    padding-bottom: 15px;              
 }
 
 body{
@@ -59,10 +62,30 @@ span{
     border: solid #08356b;
     width:120px;
     height:40px;
+    border-radius: 15px;
+    color: #297767;
+}
+
+.result-box{
+    display: flex;
+    flex-direction: column;
+    border: solid #08356b;
+    width:260px;
+    height:50px;
+    margin-top: 50px;
+    border-radius: 15px;
 }
 
 .score-text{
     align-self: center;
+    color: #297767;
+}
+
+.result-text{
+    align-self: center;
+    padding-left: 7px;
+    padding-top: 3px;
+    color: #297767;
 }
 
 footer{
@@ -92,19 +115,20 @@ footer{
     padding: 0;
   }
 
-  .picture:hover{
+.picture:hover{
     transform: scale(1.2);
   }
 
-.result-box{
-    display: flex;
-    flex-direction: column;
-    border: solid #08356b;
-    width:250px;
-    height:50px;
-    margin-top: 50px;
-}
-
 #play-again-btn {
     margin-top: 35px;
+    background-color: #08356b;
+    color: white;
+    border-radius: 30px;
+    border: solid;
+    border-color:#297767;
+    width: 90px;
+}
+
+#play-again-btn:hover{
+    transform: scale(1.2);
 }
